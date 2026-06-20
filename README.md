@@ -60,26 +60,30 @@ Parent-Folder/
 │   └── index.js
 ├── package.json
 └── README.md
+```
+
+---
+
 ## 💻 Local Setup & Installation
 
 To clone Delta's laboratory and run the engine locally, execute the following steps:
 
 1. **Clone the repository:**
 
-```bash
+   ```bash
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
-```
+   ```
 
 2. **Install project dependencies:**
 
-```bash
+   ```bash
    npm install
-```
+   ```
 
 3. **Environment Variables (`.env`):** Create a `.env` file in the root directory and map out your Firebase keys and Gemini token:
 
-```env
+   ```env
    REACT_APP_FIREBASE_API_KEY=your_api_key
    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
@@ -87,15 +91,17 @@ To clone Delta's laboratory and run the engine locally, execute the following st
    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
    REACT_APP_FIREBASE_APP_ID=your_app_id
    REACT_APP_GEMINI_API_KEY=your_gemini_api_key
-```
+   ```
 
 4. **Boot up the local development server:**
 
-```bash
+   ```bash
    npm start
-```
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to begin testing Delta's awareness.
+
+---
 
 ## 📄 License
 
