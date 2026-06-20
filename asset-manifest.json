@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Delta-IA/static/css/main.36402ffd.css",
-    "main.js": "/Delta-IA/static/js/main.4a3df21a.js",
+    "main.css": "/Delta-IA/static/css/main.a5805e98.css",
+    "main.js": "/Delta-IA/static/js/main.6c36a53a.js",
     "static/media/fondo.svg": "/Delta-IA/static/media/fondo.53854c809ee1232a72ad.svg",
     "index.html": "/Delta-IA/index.html",
-    "main.36402ffd.css.map": "/Delta-IA/static/css/main.36402ffd.css.map",
-    "main.4a3df21a.js.map": "/Delta-IA/static/js/main.4a3df21a.js.map"
+    "main.a5805e98.css.map": "/Delta-IA/static/css/main.a5805e98.css.map",
+    "main.6c36a53a.js.map": "/Delta-IA/static/js/main.6c36a53a.js.map"
   },
   "entrypoints": [
-    "static/css/main.36402ffd.css",
-    "static/js/main.4a3df21a.js"
+    "static/css/main.a5805e98.css",
+    "static/js/main.6c36a53a.js"
   ]
 }
