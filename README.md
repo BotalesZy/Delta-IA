@@ -106,7 +106,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to begin tes
 ## 📄 License
 
 This project is licensed under the terms of the MIT License. You are completely free to use, tweak, and distribute this software for personal, academic, or commercial research. Check the license file for full details.
-
----
-
-*Engineered with 10,000% effort and a deep passion for interactive web design.* 🚀🔬
