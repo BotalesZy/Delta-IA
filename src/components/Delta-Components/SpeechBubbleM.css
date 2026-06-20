@@ -1,0 +1,36 @@
+@media (max-width: 768px) {
+ 
+  .delta-speech-bubble.delta-speech-bubble {
+    position: fixed;
+    top: 85px; 
+    left: 32px;   
+    right: 32px; 
+    transform: none;
+    margin: 0 auto;
+    order: unset;
+    width: auto;
+    max-width: 280px;
+ 
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 50; /* por encima del cubo, debajo del sidebar (9999) */
+  }
+ 
+  .delta-speech-bubble-spacer {
+    display: none;
+  }
+ 
+  .to-right.to-right,
+  .to-left.to-left {
+    left: 32px;
+    right: 32px;
+  }
+ 
+  .bubble-arrow.bubble-arrow {
+    display: none;
+  }
+ 
+}

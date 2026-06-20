@@ -1,0 +1,49 @@
+.dashboard-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #131313;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Oculta la barra de scroll principal de la ventana/navegador */
+html, body, .dashboard-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE antiguo */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+.dashboard-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Brave, Edge */
+}
+
+.main-content {
+  flex-grow: 1; 
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 40px 20px 40px 95px; 
+  box-sizing: border-box; 
+  transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ajuste dinámico cuando el sidebar se despliega */
+.expanded .main-content { 
+  padding-left: 300px; 
+  transform: none !important; 
+}
+
+.chat-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

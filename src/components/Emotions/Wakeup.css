@@ -1,0 +1,44 @@
+/* --- ESTADO: LEVANTARSE (WAKEUP) --- */
+
+.eye-state-wakeup .eye {
+  height: 110px;
+  border-radius: 12px;
+  background-color: #00FF66;
+  box-shadow: 0 0 15px #00FF66;
+  
+  transform-origin: center;
+  /* Mantenemos los 1.2s totales, pero redistribuimos el tiempo interno */
+  animation: parpadeoLinealWakeup 1.2s ease-in-out forwards;
+}
+
+@keyframes parpadeoLinealWakeup {
+  /* 0%: Ojos chiquitos de sleepy */
+  0% { 
+    transform: scaleY(0.2); 
+  }       
+  
+  /* 15%: Primer cierre completo (Rápido) */
+  15% { 
+    transform: scaleY(0); 
+  }      
+  
+  /* 30%: Primer pestañeo corto (Rápido) */
+  30% { 
+    transform: scaleY(0.2); 
+  }      
+  
+  /* 45%: Segundo cierre completo (Rápido) */
+  45% { 
+    transform: scaleY(0); 
+  }      
+  
+  /* 60%: Último vistazo corto... aquí se queda un momento más */
+  60% { 
+    transform: scaleY(0.2); 
+  }      
+  
+  /* Del 60% al 90% se abre de forma más suave y progresiva */
+  90%, 100% { 
+    transform: scaleY(1); 
+  } 
+}

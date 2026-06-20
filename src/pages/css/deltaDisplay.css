@@ -1,0 +1,197 @@
+/* =========================================================
+   src/components/Delta-Dashboard/DeltaDisplay.css
+   ========================================================= */
+
+.cube-view-container { 
+  margin-top: auto; 
+  margin-bottom: auto; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 500px; 
+}
+
+.cube-scene { 
+  width: 450px; 
+  height: 450px; 
+}
+
+.cube { 
+  width: 100%; 
+  height: 100%; 
+  position: relative; 
+  animation: megaHologramFloat 5s ease-in-out infinite; 
+}
+
+.face {
+  position: absolute; 
+  width: 450px; 
+  height: 450px;
+  background: linear-gradient(rgba(19, 19, 19, 0) 50%, rgba(0, 255, 102, 0.2) 50%);
+  background-size: 100% 4px;
+  background-color: rgba(0, 255, 102, 0.04);
+  border: 3px solid #00FF66;
+  border-radius: 8px;
+  box-shadow: inset 0 0 25px rgba(0, 255, 102, 0.15);
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.delta-display-zone {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 450px; 
+  height: 450px;
+}
+
+.delta-display-zone.right-layout { flex-direction: row; }
+.delta-display-zone.left-layout { flex-direction: row-reverse; }
+
+/* RECTÁNGULOS DE LOS OJOS BASE */
+.eyes-container {
+  display: flex;
+  gap: 50px;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.eye {
+  width: 45px;
+  height: 110px;
+  background-color: #00FF66;
+  border-radius: 12px;
+  animation: megaCubeBlink 6s infinite;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.3s ease, clip-path 0.25s ease;
+  clip-path: inset(0% 0% 0% 0% round 12px);
+}
+
+/* ENRUTAMIENTO DINÁMICO DE EMOCIONES */
+.eye-state-reading-l1 .eye { height: 50px; animation: none; }
+.eye-state-reading-l1 .eyes-container { animation: scanLine 1.2s ease-in-out infinite; }
+
+.eye-state-j-look-slide .eyes-container { transform: translateX(-70px); }
+.eye-state-j-look-user .eyes-container { transform: translateX(0px); }
+
+.eye-state-j-narrow-user .eye { height: 50px; animation: none; }
+.eye-state-j-narrow-user .eyes-container { transform: translateX(0px); }
+
+.eye-state-j-narrow-slide .eye { height: 50px; animation: none; }
+.eye-state-j-narrow-slide .eyes-container { transform: translateX(-70px); }
+
+.eye-state-j-slow-return .eye { height: 50px; animation: none; transition: transform 1.8s ease; }
+.eye-state-j-slow-return .eyes-container { transform: translateX(0px); transition: transform 1.8s ease; }
+
+.eye-state-h-look-nw .eyes-container { transform: translate(-45px, -35px); }
+.eye-state-h-look-se .eyes-container { transform: translate(45px, 35px); }
+
+/* BURBUJA FLOTANTE SUSPENDIDA EN EL AIRE */
+.floating-chat-bubble {
+  background-color: #E8D8A6; 
+  color: #131313; 
+  font-weight: 500; 
+  font-size: 0.95rem; 
+  padding: 16px 24px; 
+  border-radius: 18px; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+  max-width: 540px; 
+  width: fit-content; 
+  text-align: justify; 
+  text-justify: inter-word; 
+  line-height: 1.4; 
+  margin-bottom: 25px; 
+  opacity: 0; 
+  transform: translateY(15px) scale(0.95); 
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.floating-chat-bubble.visible { 
+  opacity: 1; 
+  transform: translateY(0) scale(1); 
+}
+
+/* EFECTOS DE TEXTO EN EL DISPLAY HOLOGRÁFICO */
+.slow-dots span {
+  display: inline-block;
+  opacity: 0;
+  animation: dotAppear 0.5s forwards;
+}
+.slow-dots span:nth-child(1) { animation-delay: 0.1s; }
+.slow-dots span:nth-child(2) { animation-delay: 0.6s; }
+.slow-dots span:nth-child(3) { animation-delay: 1.1s; }
+
+.admin-pause {
+  display: inline;
+  opacity: 0;
+  animation: dotAppear 0.3s forwards;
+  animation-delay: 2.7s;
+}
+
+.admin-stranger {
+  display: inline;
+  opacity: 0;
+  animation: dotAppear 0.3s forwards;
+  animation-delay: 1s;
+}
+
+/* SOPORTE GLOBAL COMPATIBLE CON LA NUEVA OLA DE LA IA */
+.delta-wavy-container {
+  display: inline-block;
+  color: #ff7300;
+  font-weight: bold;
+}
+.delta-wavy-letter {
+  display: inline-block;
+  animation: pureWaveAnim 1.2s infinite ease-in-out;
+}
+.delta-wavy-letter:nth-child(1) { animation-delay: 0s; }
+.delta-wavy-letter:nth-child(2) { animation-delay: 0.15s; }
+.delta-wavy-letter:nth-child(3) { animation-delay: 0.3s; }
+
+/* ANIMACIONES DEL ENTORNO HOLOGRÁFICO */
+@keyframes megaHologramFloat {
+  0%, 100% { transform: translateY(0px); filter: brightness(1); }
+  50% { transform: translateY(-18px); filter: brightness(1.1); }
+}
+
+@keyframes megaCubeBlink {
+  0%, 94%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.02); }
+}
+
+@keyframes scanLine {
+  0%, 100% { transform: translateX(-30px); }
+  50% { transform: translateX(30px); }
+}
+
+@keyframes dotAppear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pureWaveAnim {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* Animación de despertar sospechando */
+@keyframes wakeupToSquint {
+  0% {
+    height: 0px; /* Completamente dormida/cerrada */
+  }
+  100% {
+    height: 50px; /* Mirada entrecerrada/squint */
+  }
+}
+
+.eye-state-j-narrow-user .eye { 
+  animation: wakeupToSquint 0.4s ease-out forwards; /* Abre el ojo de golpe en 0.4s */
+}
+
+.eye-state-j-narrow-user .eyes-container { 
+  transform: translateX(0px); 
+}

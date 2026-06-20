@@ -1,0 +1,216 @@
+#bloqueo-orientacion {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: #050505;
+  z-index: 999999999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #d6b85a;
+  font-family: sans-serif;
+}
+
+.contenido-bloqueo {
+  padding: 35px;
+  max-width: 80%;
+}
+
+.contenido-bloqueo h2 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  color: #d6b85a;
+}
+
+.contenido-bloqueo p {
+  color: #d6b85a;
+  opacity: .75;
+  line-height: 1.5;
+}
+
+.icono-giro {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  color: #d6b85a;
+  animation: rotarDispositivo 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(214,184,90,.35));
+}
+
+@keyframes rotarDispositivo {
+  0% { transform: rotate(90deg); }
+  30% { transform: rotate(0deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(90deg); }
+}
+
+@media (orientation: landscape) and (max-height:768px) {
+  #bloqueo-orientacion {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+    .main-wrapper b {
+        font-size: 65px !important;
+    }
+
+    .auth-mobile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100dvh;
+        padding: 20px;
+        box-sizing: border-box;
+        opacity: 0;
+        animation: mobileFadeIn 0.8s ease-out 2.1s both;
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .glass-card-mobile {
+        width: 100%;
+        max-width: 360px;
+        background: linear-gradient(
+            135deg,
+            rgba(76, 12, 143, 0.85),
+            rgba(147, 68, 201, 0.3)
+        );
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        padding: 30px 22px;
+        box-sizing: border-box;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .auth-tabs {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        margin-bottom: 24px;
+    }
+
+    .tab-btn {
+        flex: 1;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        padding: 14px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .auth-tabs .tab-btn.active {
+        color: white;
+        border-bottom: 3px solid #C77DFF;
+        text-shadow: 0 0 8px rgba(199, 125, 255, 0.6);
+    }
+
+    .auth-form-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 18px;
+    }
+
+    .dynamic-input-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 18px;
+    }
+
+    .glass-card-mobile input {
+        width: 100%;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        border-radius: 14px;
+        padding: 14px 18px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .glass-card-mobile input:focus {
+        border: 1px solid #A78BFA;
+        box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+    }
+
+    .glass-card-mobile .input-icon,
+    .glass-card-mobile .input-group {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .glass-card-mobile .boton {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px;
+        padding: 14px;
+    }
+
+    .animated-field {
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                    opacity 0.25s ease, 
+                    margin 0.35s ease,
+                    max-height 0.35s ease;
+        transform-origin: top center;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .animated-field.hide {
+        transform: scaleY(0);
+        max-height: 0;
+        opacity: 0;
+        margin-bottom: -18px;
+        pointer-events: none;
+    }
+
+    .animated-field.show {
+        transform: scaleY(1);
+        max-height: 80px;
+        opacity: 1;
+        margin-bottom: 0;
+        pointer-events: all;
+    }
+
+    .glass-card-mobile .forgot-text {
+        text-align: right;
+        width: 100%;
+        display: block;
+        padding-right: 4px;
+    }
+
+    @keyframes mobileFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .glass-card-mobile .input-icon input {
+        width: 100%;
+        padding-left: 40px;
+        height: 46px;
+    }
+}

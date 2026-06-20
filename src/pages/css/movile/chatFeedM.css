@@ -1,0 +1,81 @@
+@media (max-width: 768px) {
+  .chat-feed-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+
+  .delta-simple-zone-feed {
+    height: calc(100vh - 220px); 
+    height: calc(100dvh - 220px); 
+    margin-top: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .delta-simple-zone-empty {
+    min-height: 50vh;
+    gap: 15px;
+  }
+
+  .delta-greek-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .delta-status-title {
+    font-size: 1.25rem;
+  }
+
+  .delta-status-subtitle {
+    font-size: 0.95rem;
+    padding: 0 20px;
+  }
+
+  .simple-messages-wrapper {
+    gap: 14px;
+  }
+
+  .simple-msg-row {
+    max-width: 95%;
+    gap: 8px;
+  }
+
+  .simple-msg-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .simple-msg-bubble {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 16px;
+  }
+  
+  .row-user .simple-msg-bubble {
+    border-top-right-radius: 2px;
+  }
+
+  .row-delta .simple-msg-bubble {
+    border-top-left-radius: 2px;
+  }
+
+  .scroll-to-bottom-btn {
+    bottom: 10px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    width: auto;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+  
+  .scroll-to-bottom-btn:hover {
+    background: rgba(15, 15, 15, 0.9);
+    color: #00FF66;
+    transform: translateX(-50%);
+  }
+}

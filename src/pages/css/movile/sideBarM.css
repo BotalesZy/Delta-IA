@@ -1,0 +1,71 @@
+@media (max-width: 768px) {
+
+  .sidebar .hamburger-btn {
+    display: none;
+    pointer-events: none;
+  }
+  
+  .sidebar .hamburger-container {
+    padding: 0;
+    display: inline-block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;      
+    left: 0; 
+    transform: translate3d(-100%, 0, 0);
+    width: 80%;    
+    max-width: 320px;
+    height: 100vh; 
+    background-color: rgba(18, 18, 18, 0.99);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    z-index: 9999; 
+    padding: 24px 0;
+    border-radius: 0; 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    overflow: hidden;
+    contain: layout style;
+    padding-bottom: calc(max(env(safe-area-inset-bottom, 0px), 90px));
+  }
+
+  .expanded .sidebar {
+    transform: translate3d(0, 0, 0);
+    width: 80%;
+  }
+
+  .sidebar-top-section {
+    height: 60px;
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sidebar-delta-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #00FF66;
+    display: block;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .expanded .sidebar-delta-logo {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .sidebar-history-section {
+    transform: translateZ(0);
+    contain: layout style paint;
+  }
+
+}

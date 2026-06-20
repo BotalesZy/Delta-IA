@@ -1,0 +1,67 @@
+.boton-flotante-movil {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  button.boton-flotante-movil,
+  div.boton-flotante-movil {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: auto;
+    padding: 0;
+    margin: 0;
+    z-index: 10005;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(30, 30, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  button.boton-flotante-movil.expanded,
+  div.boton-flotante-movil.expanded {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+  }
+
+  .boton-flotante-movil .hamburger-btn {
+    width: 22px;
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    pointer-events: none;
+  }
+
+  .boton-flotante-movil .line {
+    width: 100%;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    will-change: transform, opacity;
+  }
+
+  .boton-flotante-movil.expanded .hamburger-btn .line:nth-child(1) { 
+    transform: translateY(6px) rotate(45deg); 
+  }
+
+  .boton-flotante-movil.expanded .hamburger-btn .line:nth-child(2) { 
+    opacity: 0; 
+  }
+
+  .boton-flotante-movil.expanded .hamburger-btn .line:nth-child(3) { 
+    transform: translateY(-6.5px) rotate(-45deg); 
+  }
+}

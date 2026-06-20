@@ -1,0 +1,52 @@
+@media (max-width: 768px) {
+  .cube-scene {
+    width: 244px;
+    height: 244px;
+  }
+
+  .face {
+    width: 244px;
+    height: 244px;
+  }
+
+  .delta-display-zone {
+    width: 244px;
+    height: 244px;
+  }
+
+  .cube-view-container {
+    height: 293px;
+    margin-top: 190px;
+  }
+
+  .eye {
+    width: 24px;
+    height: 59px;
+  }
+
+  .eyes-container {
+    gap: 28px;
+  }
+
+  .delta-display-zone.right-layout,
+  .delta-display-zone.left-layout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .floating-chat-bubble {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 100px;
+    width: fit-content;
+    max-width: 85vw;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    z-index: 45;
+  }
+}

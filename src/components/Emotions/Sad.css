@@ -1,0 +1,70 @@
+/* =========================================================
+   EMOCIÓN: TRISTE CON SECUENCIA DE PROCESAMIENTO
+   ========================================================= */
+
+/* Aplicamos la animación principal al contenedor de los ojos */
+.eye-state-sad .eye {
+  background-color: #00FF66;
+  animation: sadProcessingSequence 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  /* Desactivamos el pestañeo genérico de 6s para que no interfiera */
+  border-radius: 12px;
+}
+
+/* Asignamos los recortes diagonales fijos por cada ojo */
+.eye-state-sad .left-eye {
+  --sad-clip: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.eye-state-sad .right-eye {
+  --sad-clip: polygon(0% 0%, 100% 30%, 100% 100%, 0% 100%);
+}
+
+/* =========================================================
+   LÍNEA DE TIEMPO DE LA ANIMACIÓN (KEYFRAMES)
+   ========================================================= */
+@keyframes sadProcessingSequence {
+  /* 1. ESTADO INICIAL: Ojo normal (Rectángulo completo) */
+  0% {
+    height: 110px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  /* 2. TRANSFORMACIÓN: Se deforma a triste de manera fluida */
+  20% {
+    height: 90px;
+    clip-path: var(--sad-clip);
+    transform: scaleY(1);
+  }
+
+  /* 3. PARPADEO: Se cierra rápido (escala en Y a cero) */
+  28% {
+    height: 90px;
+    clip-path: var(--sad-clip);
+    transform: scaleY(0.02);
+  }
+
+  /* 4. REAPERTURA: Vuelve a abrirse en modo triste */
+  36% {
+    height: 90px;
+    clip-path: var(--sad-clip);
+    transform: scaleY(1);
+  }
+
+  /* Pausa corta antes de encogerse */
+  42% {
+    height: 90px;
+    clip-path: var(--sad-clip);
+  }
+
+  /* 5. PROCESANDO: El ojo se hace más chico (se encoge un 35%) */
+  48%, 75% {
+    height: 55px; /* Altura reducida considerablemente */
+    clip-path: var(--sad-clip);
+  }
+
+  /* 6. RETORNO: Vuelve al tamaño triste estándar y se estabiliza */
+  88%, 100% {
+    height: 90px;
+    clip-path: var(--sad-clip);
+  }
+}

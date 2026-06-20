@@ -1,0 +1,445 @@
+/* =========================================================
+   src/components/Delta-Dashboard/Sidebar.css
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 25px 0;
+  box-sizing: border-box;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  /* Aísla el repintado de este componente del resto del documento.
+     Ayuda a que el navegador no recalcule layout fuera del sidebar
+     mientras este anima. */
+  contain: layout style;
+}
+
+.expanded .sidebar { 
+  width: 280px; 
+}
+
+.sidebar-top-section {
+  position: relative;
+  width: 100%;
+  height: 85px;
+  box-sizing: border-box;
+}
+
+.hamburger-container {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 0 22px;
+  gap: 15px;
+}
+
+.hamburger-btn {
+  position: relative;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.hamburger-btn .line { 
+  width: 100%; 
+  height: 3px; 
+  background-color: #ffffff; 
+  border-radius: 10px; 
+  transition: all 0.3s ease; 
+}
+
+.expanded .hamburger-btn .line:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.expanded .hamburger-btn .line:nth-child(2) { opacity: 0; }
+.expanded .hamburger-btn .line:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+.sidebar-delta-logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #00FF66;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.expanded .sidebar-delta-logo {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+/* HISTORIAL DENTRO DEL SIDEBAR */
+.sidebar-history-section {
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+}
+
+.sidebar-history-section::-webkit-scrollbar {
+  display: none;
+}
+
+.history-section-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 1px;
+  margin: 0 0 12px 12px;
+  font-weight: 700;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.expanded .history-section-title {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 250px;
+}
+
+.sidebar-chat-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background 0.2s;
+  justify-content: space-between;
+  position: relative;
+  overflow: visible;
+}
+
+.history-item:hover {
+  background-color: #202020;
+}
+
+.history-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  margin-right: 10px;
+}
+
+.history-text {
+  margin-left: 20px;
+  font-size: 0.88rem;
+  color: #a0a0a0;
+  width: auto;
+  max-width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.expanded .history-text {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+.chat-options-trigger {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.chat-options-trigger:hover {
+  color: #00FF66;
+  background-color: rgba(0, 255, 102, 0.1);
+}
+
+.empty-history-text {
+  font-size: 0.8rem;
+  color: #444444;
+  margin-left: 12px;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.expanded .empty-history-text { 
+  opacity: 1; 
+}
+
+.sidebar-item {
+  display: flex; 
+  align-items: center; 
+  width: 250px; 
+  margin: 10px 0 10px 12px; 
+  padding: 12px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  color: #a0a0a0; 
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-item:hover, .sidebar-item.active { 
+  background-color: #252525; 
+  color: #ffffff; 
+}
+
+.sidebar-item.primary-item { 
+  color: #00FF66; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding-left: 14px !important;
+  box-sizing: border-box !important;
+  gap: 10px;
+  transition: all 0.3s ease;
+  background: rgba(0, 255, 102, 0.03);
+  border: 1px dashed rgba(0, 255, 102, 0.3);
+  margin: 0 0 15px 12px;
+  width: calc(100% - 24px);
+}
+
+.icon-wrapper { 
+  width: 26px; 
+  height: 26px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-shrink: 0; 
+}
+
+.sidebar-item.primary-item .icon-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00FF66;
+}
+
+.sidebar-item.primary-item span {
+  color: #00FF66;
+}
+
+.sidebar-icon { 
+  width: 24px; 
+  height: 24px;
+}
+
+/* COMPORTAMIENTO COLAPSADO (PROTECCIONES) */
+.dashboard-container:not(.expanded) .sidebar-item.primary-item {
+  width: 50px;
+  justify-content: center !important;
+  padding: 10px 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-container:not(.expanded) .sidebar-item.primary-item span,
+.dashboard-container:not(.expanded) .history-text {
+  display: none;
+}
+
+.dashboard-container:not(.expanded) .history-item {
+  background-color: transparent !important;
+  cursor: default;
+}
+.dashboard-container:not(.expanded) .chat-options-trigger {
+  opacity: 0;
+  pointer-events: none;
+  display: none !important;
+}
+.dashboard-container:not(.expanded) .sidebar-chat-item::before {
+  display: none !important;
+}
+
+/* SECCIÓN DE USUARIO / LOGOUT */
+.user-section { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; /* Empuja el perfil a la izquierda y el logout a la derecha */
+  padding: 0 16px;                /* Padding balanceado para ambos lados */
+  width: 100%; 
+  position: relative; 
+  flex-shrink: 0; 
+  margin-top: auto; 
+  box-sizing: border-box;         /* Evita que el padding sume tamaño extra */
+}
+
+.user-avatar-wrapper { 
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  border: 2px solid #333; 
+  flex-shrink: 0; 
+}
+
+.user-avatar { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.logout-icon-btn { 
+  background: transparent; 
+  border: none; 
+  color: #ff4757; 
+  cursor: pointer; 
+  margin-left: 8px;   /* Un margen pequeño de seguridad, ya no los 140px fijos */
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity 0.2s ease; 
+  flex-shrink: 0;     /* Evita que el botón de logout se deforme */
+}
+
+.expanded .logout-icon-btn { 
+  opacity: 1; 
+  pointer-events: auto; 
+  transition: opacity 0.4s ease 0.1s; 
+}
+
+/* =========================================================
+   NUEVOS ESTILOS REFACTORIZADOS DEL INPUT INLINE (TEXTBOX)
+   ========================================================= */
+
+.editable-chat-title-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 80%;
+}
+
+.editable-chat-title {
+  outline: none;
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 0.2s, border 0.2s, box-shadow 0.2s;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Clase dinámica cuando entra el modo textbox editable */
+.editable-chat-title.is-editing {
+  width: 100% !important;
+  background-color: #121212 !important;
+  box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.5) !important;
+}
+
+/* DISEÑO DEL DROP-DOWN DE OPCIONES TRADUCIDO */
+.sidebar-dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #181818;
+  border: 1px solid #333;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  z-index: 99;
+  min-width: 165px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+.dropdown-action-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.dropdown-action-btn:hover {
+  background-color: #252525;
+}
+
+.dropdown-action-btn.delete-btn {
+  color: #FF4444;
+}
+
+.dropdown-action-btn.delete-btn:hover {
+  background-color: #251515;
+}
+
+.dropdown-action-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Contenedor que alinea el avatar y el texto en la misma fila */
+.user-profile-info {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 12px;           
+  min-width: 0;        /* CRÍTICO: Permite que el texto se comprima si es necesario en flexbox */
+  flex: 1;             /* Toma el espacio disponible de forma inteligente */
+}
+
+/* Estilo avanzado para el nombre del usuario */
+.sidebar-username-text {
+  font-size: 15px;
+  font-weight: bold;         /* ¡Negrita! */
+  font-style: italic;        /* ¡Itálica! */
+  color: #ffffff;            /* Color principal del texto */
+  
+  /* EFECTO OUTLINE: Crea un delineado negro de 1px alrededor de las letras */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+     
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   /* Corta con "..." si el nombre es kilométrico */
+}

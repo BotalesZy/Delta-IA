@@ -1,0 +1,75 @@
+/* src/components/Delta-Components/Emotions/Sleepy.css */
+
+/* =========================================================
+   1. PARPADEOS PESADOS (Pre-sueño continuo)
+   ========================================================= */
+.eye-state-sleepy .eye-wrapper {
+  animation: deltaSleepingBreathing 3s ease-in-out infinite 4.2s;
+}
+
+/* =========================================================
+   2. MODO DORMIDO (Flujo continuo y lineal, sin rebotes)
+   ========================================================= */
+.eye-state-sleepy .eye {
+  animation: deltaSleepSequence 4.2s ease-in-out forwards;
+  transition: none !important;
+}
+@keyframes deltaSleepSequence {
+
+  /* 0 → estado awake */
+  0% {
+    transform: scaleY(1);
+    background-color: #00FF66;
+    height: 110px;
+    border-radius: 12px;
+  }
+
+  /* 👁️ 1 SOLO PARPADEO PESADO */
+  10% {
+    transform: scaleY(0.1);
+  }
+
+  18% {
+    transform: scaleY(1);
+  }
+
+  /* pequeña pausa cerrando */
+  28% {
+    transform: scaleY(0.15);
+  }
+
+  /* empieza sueño REAL */
+  40% {
+    transform: scaleY(0.6);
+    background-color: #00cc55;
+  }
+
+  60% {
+    transform: scaleY(0.3);
+    background-color: #00aa44;
+  }
+
+  /* casi dormido */
+  80% {
+    transform: scaleY(0.2);
+    background-color: #006b33;
+  }
+
+  /* dormido final fijo */
+  100% {
+    transform: scaleY(0.2);
+    height: 12px;
+    border-radius: 4px;
+    background-color: #004d20;
+  }
+}
+
+/* Respiración infinita (Solo balanceo vertical) */
+@keyframes deltaSleepingBreathing {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
