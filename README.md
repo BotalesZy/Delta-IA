@@ -7,7 +7,7 @@
 
 **Delta AI** is not just another generic chat interface. It is an advanced AI assistant equipped with **situational awareness, shifting emotional states, and real-time environment reactivity**. Delta's visual core—an interactive, living cube—responds dynamically not only to your prompts but also to your physical actions on the webpage, judging you, nodding off, or guarding its privacy if you try to peek under the hood.
 
-🚀 **Live Demo:** [Deployed on GitHub Pages](https://your-username.github.io/your-repository/) *(Replace with your actual link)*
+🚀 **Live Demo:** [Deployed on GitHub Pages](https://botaleszy.github.io/Delta-IA) *
 
 ---
 
