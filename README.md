@@ -64,6 +64,15 @@ Parent-Folder/
 
 ---
 
+## 🔑 Demo Account
+
+Want to try Delta without creating your own account? Use the shared test credentials below:
+
+* **Username:** `admins`
+* **Password:** `admins`
+
+---
+
 ## 💻 Local Setup & Installation
 
 To clone Delta's laboratory and run the engine locally, execute the following steps:
