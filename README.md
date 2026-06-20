@@ -17,7 +17,7 @@ Delta has a highly expressive personality that adapts seamlessly between its two
 
 * **Dynamic Emotion System:** Delta actively reads between the lines. If you share something heartbreaking, its interface will shift to a melancholic state; it will instantly adapt its demeanor if you are hostile, analytical, or friendly.
 * **Environment Awareness (Sidebar Tracking):** Delta knows exactly what you are doing on your screen. If you expand the Sidebar, it will notice and judge you with its gaze; collapse it, and it will shift its attention back to the center, glancing curiously from side to side.
-* **Automated Sleep Cycle:** If left idle for a while, Delta will fall into a deep slumber (complete with custom sleep animations). While sleeping, it completely ignores layout adjustments or sidebar toggles... until you type a message to wake it up instantly!.
+* **Automated Sleep Cycle:** If left idle for a while, Delta will fall into a deep slumber (complete with custom sleep animations). While sleeping, it completely ignores layout adjustments or sidebar toggles... until you type a message to wake it up instantly!
 * **Privacy Guard (DevTools Detector):** Delta fiercely protects its personal space. Attempting to open the browser console (F12 / Inspect Element) triggers an immediate defensive reaction, causing Delta to call you out on the spot for invading its privacy.
 
 ---
